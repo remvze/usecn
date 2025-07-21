@@ -8,12 +8,12 @@ interface Props {
 }
 
 const title = Astro.props.title
-  ? `${Astro.props.title} — Minimum`
-  : 'Minimum: Minimal Websites Directory';
+  ? `${Astro.props.title} — usecn`
+  : 'usecn: shadcn/ui registry of hooks for React, Vue, and Svelte';
 
 const description =
   Astro.props.description ||
-  'A carefully curated collection of minimal websites.';
+  'A shadcn/ui registry of hooks for Reacat, Vue, and Svelte';
 
 const og = Astro.props.og || '/og.png';
 ---
@@ -33,10 +33,10 @@ const og = Astro.props.og || '/og.png';
 
     <meta content={title} property="og:title" />
     <meta content={description} property="og:description" />
-    <meta content="Minimum" property="og:site_name" />
-    <meta content="https://mnmm.xyz/" property="og:url" />
+    <meta content="usecn" property="og:site_name" />
+    <meta content="https://usecn.mvze.net/" property="og:url" />
     <meta content="website" property="og:type" />
-    <meta content={`https://mnmm.xyz${og}`} property="og:image" />
+    <meta content={`https://usecn.mvze.net${og}`} property="og:image" />
 
     <link href="/sitemap-index.xml" rel="sitemap" />
   </head>

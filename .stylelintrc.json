@@ -9,7 +9,8 @@
   "rules": {
     "import-notation": "string",
     "selector-class-pattern": null,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "at-rule-no-unknown": null
   },
 
   "overrides": [

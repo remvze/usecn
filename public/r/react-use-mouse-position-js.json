@@ -6,7 +6,7 @@
   "description": "Hook to get the position of the mouse",
   "files": [
     {
-      "path": "registry/react/use-mouse-position.js",
+      "path": "registry/hooks/use-mouse-position.js",
       "content": "'use client';\n\nimport { useState, useEffect } from 'react';\n\nexport function useMousePosition() {\n  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });\n\n  useEffect(() => {\n    function handleMouseMove(event) {\n      setMousePosition({ x: event.clientX, y: event.clientY });\n    }\n\n    window.addEventListener('mousemove', handleMouseMove);\n\n    return () => {\n      window.removeEventListener('mousemove', handleMouseMove);\n    };\n  }, []);\n\n  return mousePosition;\n}\n",
       "type": "registry:hook"
     }

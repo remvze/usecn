@@ -10,7 +10,7 @@
       "description": "Hook to get the position of the mouse",
       "files": [
         {
-          "path": "registry/react/use-mouse-position.ts",
+          "path": "registry/hooks/use-mouse-position.ts",
           "type": "registry:hook"
         }
       ]
@@ -22,7 +22,7 @@
       "description": "Hook to get the position of the mouse",
       "files": [
         {
-          "path": "registry/react/use-mouse-position.js",
+          "path": "registry/hooks/use-mouse-position.js",
           "type": "registry:hook"
         }
       ]
@@ -35,7 +35,7 @@
       "description": "Hook to toggle a boolean",
       "files": [
         {
-          "path": "registry/react/use-toggle.ts",
+          "path": "registry/hooks/use-toggle.ts",
           "type": "registry:hook"
         }
       ]
@@ -47,7 +47,7 @@
       "description": "Hook to toggle a boolean",
       "files": [
         {
-          "path": "registry/react/use-toggle.js",
+          "path": "registry/hooks/use-toggle.js",
           "type": "registry:hook"
         }
       ]

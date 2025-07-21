@@ -8,12 +8,6 @@ Hook to toggle a boolean.
 npx shadcn@latest add https://usecn.mvze.net/r/use-toggle.json
 ```
 
-JavaScript version:
-
-```bash
-npx shadcn@latest add https://usecn.mvze.net/r/use-toggle-js.json
-```
-
 #### Usage
 
 ```tsx

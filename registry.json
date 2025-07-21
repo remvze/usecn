@@ -15,18 +15,6 @@
         }
       ]
     },
-    {
-      "name": "use-mouse-position-js",
-      "type": "registry:hook",
-      "title": "useMousePosition",
-      "description": "Hook to get the position of the mouse",
-      "files": [
-        {
-          "path": "registry/hooks/use-mouse-position.js",
-          "type": "registry:hook"
-        }
-      ]
-    },
 
     {
       "name": "use-toggle",
@@ -36,18 +24,6 @@
       "files": [
         {
           "path": "registry/hooks/use-toggle.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
-      "name": "use-toggle-js",
-      "type": "registry:hook",
-      "title": "useToggle",
-      "description": "Hook to toggle a boolean",
-      "files": [
-        {
-          "path": "registry/hooks/use-toggle.js",
           "type": "registry:hook"
         }
       ]
@@ -65,18 +41,6 @@
         }
       ]
     },
-    {
-      "name": "use-hash-js",
-      "type": "registry:hook",
-      "title": "useHash",
-      "description": "Hook to work with url hash",
-      "files": [
-        {
-          "path": "registry/hooks/use-hash.js",
-          "type": "registry:hook"
-        }
-      ]
-    },
 
     {
       "name": "use-local-storage",
@@ -86,18 +50,6 @@
       "files": [
         {
           "path": "registry/hooks/use-local-storage.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
-      "name": "use-local-storage-js",
-      "type": "registry:hook",
-      "title": "useLocalStorage",
-      "description": "Hook to work with local storage",
-      "files": [
-        {
-          "path": "registry/hooks/use-local-storage.js",
           "type": "registry:hook"
         }
       ]

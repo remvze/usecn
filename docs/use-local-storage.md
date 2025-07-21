@@ -8,12 +8,6 @@ Hook to work with local storage.
 npx shadcn@latest add https://usecn.mvze.net/r/use-local-storage.json
 ```
 
-JavaScript version:
-
-```bash
-npx shadcn@latest add https://usecn.mvze.net/r/use-local-storage-js.json
-```
-
 #### Usage
 
 ```tsx

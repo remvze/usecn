@@ -8,12 +8,6 @@ Hook to get the position of the mouse.
 npx shadcn@latest add https://usecn.mvze.net/r/use-mouse-position.json
 ```
 
-JavaScript version:
-
-```bash
-npx shadcn@latest add https://usecn.mvze.net/r/use-mouse-position-js.json
-```
-
 #### Usage
 
 ```tsx

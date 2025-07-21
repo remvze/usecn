@@ -8,12 +8,6 @@ Hook to work with the URL hash.
 npx shadcn@latest add https://usecn.mvze.net/r/use-hash.json
 ```
 
-JavaScript version:
-
-```bash
-npx shadcn@latest add https://usecn.mvze.net/r/use-hash-js.json
-```
-
 #### Usage
 
 ```tsx

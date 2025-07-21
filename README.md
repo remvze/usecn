@@ -7,6 +7,6 @@
 
 #### Hooks:
 
-- `[useMousePosition](/docs/use-mouse-position.md)`
-- `[useToggle](/docs/use-hash.md)`
-- `[useHash](/docs/use-hash.md)`
+- [`useMousePosition`](/docs/use-mouse-position.md)
+- [`useToggle`](/docs/use-hash.md)
+- [`useHash`](/docs/use-hash.md)

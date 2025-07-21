@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/hooks/use-toggle.ts",
-      "content": "import { useState, useCallback } from 'react';\n\nexport function useToggle(initial: boolean) {\n  const [value, setValue] = useState<boolean>(initial);\n\n  const toggle = useCallback(() => {\n    setValue(prev => !prev);\n  }, []);\n\n  return [value, toggle];\n}\n",
+      "content": "'use client';\n\nimport { useState, useCallback } from 'react';\n\nexport function useToggle(initial: boolean) {\n  const [value, setValue] = useState<boolean>(initial);\n\n  const toggle = useCallback(() => {\n    setValue(prev => !prev);\n  }, []);\n\n  return [value, toggle];\n}\n",
       "type": "registry:hook"
     }
   ]

@@ -51,6 +51,31 @@
           "type": "registry:hook"
         }
       ]
+    },
+
+    {
+      "name": "use-hash",
+      "type": "registry:hook",
+      "title": "useHash",
+      "description": "Hook to work with url hash",
+      "files": [
+        {
+          "path": "registry/hooks/use-hash.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-hash-js",
+      "type": "registry:hook",
+      "title": "useHash",
+      "description": "Hook to toggle a boolean",
+      "files": [
+        {
+          "path": "registry/hooks/use-hash.js",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }

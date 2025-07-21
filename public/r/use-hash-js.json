@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-hash-js",
+  "type": "registry:hook",
+  "title": "useHash",
+  "description": "Hook to toggle a boolean",
+  "files": [
+    {
+      "path": "registry/hooks/use-hash.js",
+      "content": "'use client';\n\nimport { useState, useEffect, useCallback } from 'react';\n\nexport function useHash() {\n  const getHash = () =>\n    typeof window !== 'undefined' ? window.location.hash.slice(1) : '';\n\n  const [hash, setHashState] = useState(getHash);\n\n  useEffect(() => {\n    const onHashChange = () => {\n      setHashState(getHash());\n    };\n\n    window.addEventListener('hashchange', onHashChange);\n    return () => {\n      window.removeEventListener('hashchange', onHashChange);\n    };\n  }, []);\n\n  const setHash = useCallback(newHash => {\n    window.location.hash = newHash;\n  }, []);\n\n  const clearHash = useCallback(() => {\n    history.pushState(\n      '',\n      document.title,\n      window.location.pathname + window.location.search,\n    );\n\n    setHashState('');\n  }, []);\n\n  return { clearHash, hash, setHash };\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
 <div align="center">
-  <h2>Minimum</h2>
-  <p>Minimal websites directory.</p>
+  <h2>usecn</h2>
+  <p>🎁 A shadcn/ui registry of hooks for React, Vue, and Svelte.</p>
 </div>

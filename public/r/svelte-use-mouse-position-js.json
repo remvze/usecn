@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "svelte-use-mouse-position-js",
+  "type": "registry:hook",
+  "title": "useMousePosition",
+  "description": "Hook to get the position of the mouse",
+  "files": [
+    {
+      "path": "registry/svelte/use-mouse-position.svelte.js",
+      "content": "export const useMousePosition = () => {\n  let x = $state(0);\n  let y = $state(0);\n\n  $effect(() => {\n    const handleMouseMove = event => {\n      x = event.clientX;\n      y = event.clientY;\n    };\n\n    window.addEventListener('mousemove', handleMouseMove);\n\n    return () => {\n      window.removeEventListener('mousemove', handleMouseMove);\n    };\n  });\n\n  return {\n    get x() {\n      return x;\n    },\n    get y() {\n      return y;\n    },\n  };\n};\n",
+      "type": "registry:hook"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-debounce",
+  "type": "registry:hook",
+  "title": "useDebounce",
+  "description": "Hook that returns a debounced copy of any rapidly‑changing value",
+  "files": [
+    {
+      "path": "registry/hooks/use-debounce.ts",
+      "content": "import { useEffect, useState } from 'react';\n\nexport function useDebounce<T>(value: T, delay = 250): T {\n  const [debounced, setDebounced] = useState(value);\n\n  useEffect(() => {\n    const id = window.setTimeout(() => setDebounced(value), delay);\n\n    return () => window.clearTimeout(id);\n  }, [value, delay]);\n\n  return debounced;\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

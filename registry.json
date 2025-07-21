@@ -101,31 +101,6 @@
           "type": "registry:hook"
         }
       ]
-    },
-
-    {
-      "name": "use-debounce",
-      "type": "registry:hook",
-      "title": "useDebounce",
-      "description": "Hook that returns a debounced copy of any rapidly‑changing value",
-      "files": [
-        {
-          "path": "registry/hooks/use-debounce.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
-      "name": "use-debounce-js",
-      "type": "registry:hook",
-      "title": "useDebounce",
-      "description": "Hook that returns a debounced copy of any rapidly‑changing value",
-      "files": [
-        {
-          "path": "registry/hooks/use-debounce.js",
-          "type": "registry:hook"
-        }
-      ]
     }
   ]
 }

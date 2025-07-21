@@ -4,7 +4,7 @@
   "homepage": "https://github.com/remvze/usecn",
   "items": [
     {
-      "name": "react-use-mouse-position",
+      "name": "use-mouse-position",
       "type": "registry:hook",
       "title": "useMousePosition",
       "description": "Hook to get the position of the mouse",
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "name": "react-use-mouse-position-js",
+      "name": "use-mouse-position-js",
       "type": "registry:hook",
       "title": "useMousePosition",
       "description": "Hook to get the position of the mouse",
@@ -29,7 +29,7 @@
     },
 
     {
-      "name": "react-use-toggle",
+      "name": "use-toggle",
       "type": "registry:hook",
       "title": "useToggle",
       "description": "Hook to toggle a boolean",
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "name": "react-use-toggle-js",
+      "name": "use-toggle-js",
       "type": "registry:hook",
       "title": "useToggle",
       "description": "Hook to toggle a boolean",

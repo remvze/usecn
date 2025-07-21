@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "react-use-toggle-js",
+  "name": "use-toggle-js",
   "type": "registry:hook",
   "title": "useToggle",
   "description": "Hook to toggle a boolean",

@@ -1,20 +1,20 @@
-## useLocalStorage
+## useSessionStorage
 
-A hook to work with the local storage.
+A hook to work with the session storage.
 
 #### Install
 
 ```bash
-npx shadcn@latest add https://usecn.mvze.net/r/use-local-storage.json
+npx shadcn@latest add https://usecn.mvze.net/r/use-session-storage.json
 ```
 
 #### Usage
 
 ```tsx
-import { useLocalStorage } from '@/hooks/use-local-storage';
+import { useSessionStorage } from '@/hooks/use-session-storage';
 
 function App() {
-  const [value, setValue] = useLocalStorage('test', '');
+  const [value, setValue] = useSessionStorage('test', '');
 
   return (
     <div>

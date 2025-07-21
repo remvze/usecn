@@ -1,6 +1,6 @@
 ## useHash
 
-Hook to work with the URL hash.
+A hook to work with the URL hash.
 
 #### Install
 

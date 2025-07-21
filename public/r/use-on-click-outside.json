@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-on-click-outside",
+  "type": "registry:hook",
+  "title": "useOnClickOutside",
+  "description": "A hook to fire an event when clicked outside",
+  "files": [
+    {
+      "path": "registry/hooks/use-on-click-outside.ts",
+      "content": "'use client';\n\nimport { useEffect } from 'react';\n\nexport function useOnClickOutside(\n  ref: React.RefObject<HTMLElement | null | undefined>,\n  handler: (event: MouseEvent | TouchEvent) => void,\n) {\n  useEffect(() => {\n    const listener = (event: MouseEvent | TouchEvent) => {\n      if (!ref.current || ref.current.contains(event.target as Node)) return;\n\n      handler(event);\n    };\n\n    document.addEventListener('mousedown', listener);\n    document.addEventListener('touchstart', listener);\n\n    return () => {\n      document.removeEventListener('mousedown', listener);\n      document.removeEventListener('touchstart', listener);\n    };\n  }, [ref, handler]);\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

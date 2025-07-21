@@ -3,11 +3,11 @@
   "name": "use-local-storage",
   "type": "registry:hook",
   "title": "useLocalStorage",
-  "description": "Hook to work with local storage",
+  "description": "A hook to work with the local storage",
   "files": [
     {
       "path": "registry/hooks/use-local-storage.ts",
-      "content": "import { type Dispatch, type SetStateAction, useEffect, useState } from 'react';\n\ntype SetValue<T> = Dispatch<SetStateAction<T>>;\n\nexport function useLocalStorage<T>(key: string, fallback: T): [T, SetValue<T>] {\n  const [value, setValue] = useState(fallback);\n  const [isHydrated, setIsHydrated] = useState(false);\n\n  useEffect(() => {\n    const value = localStorage.getItem(key);\n\n    if (!value) return;\n\n    let parsed;\n\n    try {\n      parsed = JSON.parse(value);\n    } catch (error) {\n      parsed = fallback;\n    }\n\n    setValue(parsed);\n    setIsHydrated(true);\n  }, [key, fallback]);\n\n  useEffect(() => {\n    if (!isHydrated) return;\n\n    localStorage.setItem(key, JSON.stringify(value));\n  }, [value, key, isHydrated]);\n\n  return [value, setValue];\n}\n",
+      "content": "'use client';\n\nimport { useEffect, useState, type Dispatch, type SetStateAction } from 'react';\n\ntype SetValue<T> = Dispatch<SetStateAction<T>>;\n\nexport function useLocalStorage<T>(key: string, fallback: T): [T, SetValue<T>] {\n  const [value, setValue] = useState<T>(fallback);\n  const [isHydrated, setIsHydrated] = useState(false);\n\n  useEffect(() => {\n    try {\n      const stored = window.localStorage.getItem(key);\n      if (stored !== null) {\n        setValue(JSON.parse(stored));\n      }\n    } catch {\n      // do nothing\n    } finally {\n      setIsHydrated(true);\n    }\n  }, [key]);\n\n  useEffect(() => {\n    if (!isHydrated) return;\n\n    try {\n      window.localStorage.setItem(key, JSON.stringify(value));\n    } catch {\n      // do nothing\n    }\n  }, [key, value, isHydrated]);\n\n  return [value, setValue];\n}\n",
       "type": "registry:hook"
     }
   ]

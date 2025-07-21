@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-debounced-callback",
+  "type": "registry:hook",
+  "title": "useDebouncedCallback",
+  "description": "A hook to debounce a callback",
+  "files": [
+    {
+      "path": "registry/hooks/use-debounced-callback.ts",
+      "content": "'use client';\n\nimport { useRef, useEffect, useCallback } from 'react';\n\nexport function useDebouncedCallback<Args extends unknown[]>(\n  fn: (...args: Args) => void,\n  delay: number,\n): (...args: Args) => void {\n  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);\n\n  const debouncedFn = useCallback(\n    (...args: Args) => {\n      if (timeoutRef.current) {\n        clearTimeout(timeoutRef.current);\n      }\n\n      timeoutRef.current = setTimeout(() => {\n        fn(...args);\n      }, delay);\n    },\n    [fn, delay],\n  );\n\n  useEffect(() => {\n    return () => {\n      if (timeoutRef.current) clearTimeout(timeoutRef.current);\n    };\n  }, []);\n\n  return debouncedFn;\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

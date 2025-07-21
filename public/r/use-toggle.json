@@ -3,7 +3,7 @@
   "name": "use-toggle",
   "type": "registry:hook",
   "title": "useToggle",
-  "description": "Hook to toggle a boolean",
+  "description": "A hook to toggle between true and false",
   "files": [
     {
       "path": "registry/hooks/use-toggle.ts",

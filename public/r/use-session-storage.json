@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-session-storage",
+  "type": "registry:hook",
+  "title": "useSessionStorage",
+  "description": "A hook to work with the session storage",
+  "files": [
+    {
+      "path": "registry/hooks/use-session-storage.ts",
+      "content": "'use client';\n\nimport { useEffect, useState, type Dispatch, type SetStateAction } from 'react';\n\ntype SetValue<T> = Dispatch<SetStateAction<T>>;\n\nexport function useSessionStorage<T>(\n  key: string,\n  fallback: T,\n): [T, SetValue<T>] {\n  const [value, setValue] = useState<T>(fallback);\n  const [isHydrated, setIsHydrated] = useState(false);\n\n  useEffect(() => {\n    try {\n      const stored = sessionStorage.getItem(key);\n      if (stored !== null) {\n        setValue(JSON.parse(stored));\n      }\n    } catch {\n      // do nothing\n    } finally {\n      setIsHydrated(true);\n    }\n  }, [key]);\n\n  useEffect(() => {\n    if (!isHydrated) return;\n\n    try {\n      sessionStorage.setItem(key, JSON.stringify(value));\n    } catch {\n      // do nothing\n    }\n  }, [key, value, isHydrated]);\n\n  return [value, setValue];\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

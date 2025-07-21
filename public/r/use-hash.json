@@ -3,11 +3,11 @@
   "name": "use-hash",
   "type": "registry:hook",
   "title": "useHash",
-  "description": "Hook to work with url hash",
+  "description": "A hook to work with the URL hash",
   "files": [
     {
       "path": "registry/hooks/use-hash.ts",
-      "content": "'use client';\n\nimport { useState, useEffect, useCallback } from 'react';\n\nexport function useHash() {\n  const getHash = () =>\n    typeof window !== 'undefined' ? window.location.hash.slice(1) : '';\n\n  const [hash, setHashState] = useState<string>(getHash);\n\n  useEffect(() => {\n    const onHashChange = () => {\n      setHashState(getHash());\n    };\n\n    window.addEventListener('hashchange', onHashChange);\n    return () => {\n      window.removeEventListener('hashchange', onHashChange);\n    };\n  }, []);\n\n  const setHash = useCallback((newHash: string) => {\n    window.location.hash = newHash;\n  }, []);\n\n  const clearHash = useCallback(() => {\n    history.pushState(\n      '',\n      document.title,\n      window.location.pathname + window.location.search,\n    );\n\n    setHashState('');\n  }, []);\n\n  return { clearHash, hash, setHash };\n}\n",
+      "content": "'use client';\n\nimport { useState, useEffect, useCallback } from 'react';\n\nexport function useHash() {\n  const getHash = () =>\n    typeof window !== 'undefined' ? window.location.hash.slice(1) : '';\n\n  const [hash, setHashState] = useState<string>(getHash);\n\n  useEffect(() => {\n    const onHashChange = () => {\n      setHashState(getHash());\n    };\n\n    window.addEventListener('hashchange', onHashChange);\n\n    return () => {\n      window.removeEventListener('hashchange', onHashChange);\n    };\n  }, []);\n\n  const setHash = useCallback((newHash: string) => {\n    window.location.hash = newHash;\n  }, []);\n\n  const clearHash = useCallback(() => {\n    history.pushState(\n      '',\n      document.title,\n      window.location.pathname + window.location.search,\n    );\n\n    setHashState('');\n  }, []);\n\n  return { clearHash, hash, setHash };\n}\n",
       "type": "registry:hook"
     }
   ]

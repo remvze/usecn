@@ -1,33 +1,35 @@
-import { type Dispatch, type SetStateAction, useEffect, useState } from 'react';
+import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
 
 export function useLocalStorage<T>(key: string, fallback: T): [T, SetValue<T>] {
-  const [value, setValue] = useState(fallback);
+  const [value, setValue] = useState<T>(fallback);
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
-    const value = localStorage.getItem(key);
-
-    if (!value) return;
-
-    let parsed;
+    if (typeof window === 'undefined') return;
 
     try {
-      parsed = JSON.parse(value);
-    } catch (error) {
-      parsed = fallback;
+      const stored = window.localStorage.getItem(key);
+      if (stored !== null) {
+        setValue(JSON.parse(stored));
+      }
+    } catch {
+      // fall back silently
+    } finally {
+      setIsHydrated(true);
     }
-
-    setValue(parsed);
-    setIsHydrated(true);
-  }, [key, fallback]);
+  }, [key]);
 
   useEffect(() => {
-    if (!isHydrated) return;
+    if (!isHydrated || typeof window === 'undefined') return;
 
-    localStorage.setItem(key, JSON.stringify(value));
-  }, [value, key, isHydrated]);
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch {
+      // ignore storage write errors
+    }
+  }, [key, value, isHydrated]);
 
   return [value, setValue];
 }

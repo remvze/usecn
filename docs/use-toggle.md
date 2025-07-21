@@ -1,6 +1,6 @@
 ## useMousePosition
 
-Hook to toggle a boolean.
+A hook to toggle a between `true` and `false`.
 
 #### Install
 

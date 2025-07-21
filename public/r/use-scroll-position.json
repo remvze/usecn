@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-scroll-position",
+  "type": "registry:hook",
+  "title": "useScrollPosition",
+  "description": "A hook to get the scroll position",
+  "files": [
+    {
+      "path": "registry/hooks/use-scroll-position.ts",
+      "content": "'use client';\n\nimport { useEffect, useState } from 'react';\n\ninterface ScrollPosition {\n  x: number;\n  y: number;\n}\n\nexport function useScrollPosition(\n  target?: React.RefObject<HTMLElement>,\n): ScrollPosition {\n  const [position, setPosition] = useState<ScrollPosition>({ x: 0, y: 0 });\n\n  useEffect(() => {\n    const handleScroll = () => {\n      if (target?.current) {\n        setPosition({\n          x: target.current.scrollLeft,\n          y: target.current.scrollTop,\n        });\n      } else {\n        setPosition({\n          x: window.scrollX,\n          y: window.scrollY,\n        });\n      }\n    };\n\n    handleScroll();\n\n    const scrollTarget = target?.current || window;\n\n    scrollTarget.addEventListener('scroll', handleScroll, { passive: true });\n\n    return () => scrollTarget.removeEventListener('scroll', handleScroll);\n  }, [target]);\n\n  return position;\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

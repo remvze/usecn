@@ -1,6 +1,6 @@
 ## useMousePosition
 
-Hook to get the position of the mouse.
+A hook to get the position of the mouse.
 
 #### Install
 

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-event-listener",
+  "type": "registry:hook",
+  "title": "useEventListener",
+  "description": "A hook to set an event listener with cleanup",
+  "files": [
+    {
+      "path": "registry/hooks/use-event-listener.ts",
+      "content": "'use client';\n\nimport { useEffect, type RefObject } from 'react';\n\ntype EventMap = WindowEventMap & DocumentEventMap & HTMLElementEventMap;\n\ntype EventTargetElement = HTMLElement | Document | Window;\n\nexport function useEventListener<\n  K extends keyof EventMap,\n  T extends EventTargetElement = Window,\n>(\n  event: K,\n  handler: (event: EventMap[K]) => void,\n  element?: T | RefObject<T> | null,\n) {\n  useEffect(() => {\n    const target: EventTargetElement | null | undefined =\n      typeof element === 'undefined'\n        ? window\n        : (element as RefObject<T>)?.current ?? (element as T);\n\n    if (!target?.addEventListener) return;\n\n    const listener = (e: Event) => handler(e as EventMap[K]);\n\n    target.addEventListener(event, listener);\n\n    return () => {\n      target.removeEventListener(event, listener);\n    };\n  }, [event, handler, element]);\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

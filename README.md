@@ -7,7 +7,15 @@
 
 #### Hooks:
 
-- [`useMousePosition`](/docs/use-mouse-position.md): Hook to get the position of the mouse.
-- [`useToggle`](/docs/use-hash.md): Hook to work with url hash.
-- [`useHash`](/docs/use-hash.md): Hook to toggle a boolean.
-- [`useLocalStorage`](/docs/use-local-storage.md): Hook to work with local storage.
+- [`useMousePosition`](/docs/use-mouse-position.md): a hook to get the position of the mouse.
+- [`useHash`](/docs/use-hash.md): A hook to work with the URL hash.
+- [`useToggle`](/docs/use-toggle.md): A hook to toggle between `true` and `false`.
+- [`useLocalStorage`](/docs/use-local-storage.md): A hook to work with local storage.
+- [`useSessionStorage`](/docs/use-session-storage.md): A hook to work with session storage.
+- [`useDebouncedValue`](/docs/use-debounced-value.md): A hook to debounce a value/state.
+- [`useDebouncedCallback`](/docs/use-debounced-callback.md): A hook to debounce a callback.
+- [`useEventListener`](/docs/use-event-listener.md): A hook to set an event listener with cleanup.
+- [`useMediaQuery`](/docs/use-media-query.md): A hook to check if a media query matches.
+- [`useOnClickOutside`](/docs/use-on-click-outside.md): A hook to fire an event when clicked outside.
+- [`useScrollPosition`](/docs/use-scroll-position.md): A hook to get the scroll position.
+- [`useWindowSize`](/docs/use-window-size.md): A hook to get the window size.

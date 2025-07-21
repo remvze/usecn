@@ -17,7 +17,7 @@ npx shadcn@latest add https://usecn.mvze.net/r/use-toggle-js.json
 #### Usage
 
 ```tsx
-import { useToggle } from './hooks/use-toggle';
+import { useToggle } from '@/hooks/use-toggle';
 
 function App() {
   const [isActive, toggleIsActive] = useToggle(false);

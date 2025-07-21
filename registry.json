@@ -76,6 +76,31 @@
           "type": "registry:hook"
         }
       ]
+    },
+
+    {
+      "name": "use-local-storage",
+      "type": "registry:hook",
+      "title": "useLocalStorage",
+      "description": "Hook to work with local storage",
+      "files": [
+        {
+          "path": "registry/hooks/use-local-storage.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-local-storage-js",
+      "type": "registry:hook",
+      "title": "useLocalStorage",
+      "description": "Hook to work with local storage",
+      "files": [
+        {
+          "path": "registry/hooks/use-local-storage.js",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }

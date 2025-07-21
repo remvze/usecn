@@ -1,12 +1,16 @@
-import { useHash } from './hooks/use-hash';
+import { useLocalStorage } from './hooks/use-local-storage';
 
 function App() {
-  const { hash, setHash } = useHash();
+  const [value, setValue] = useLocalStorage('test', '');
 
   return (
     <div>
-      <h1>{hash}</h1>
-      <input type="text" value={hash} onChange={e => setHash(e.target.value)} />
+      <h1>{value}</h1>
+      <input
+        type="text"
+        value={value}
+        onChange={e => setValue(e.target.value)}
+      />
     </div>
   );
 }

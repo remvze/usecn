@@ -17,7 +17,7 @@ npx shadcn@latest add https://usecn.mvze.net/r/use-hash-js.json
 #### Usage
 
 ```tsx
-import { useHash } from './hooks/use-hash';
+import { useHash } from '@/hooks/use-hash';
 
 function App() {
   const { hash, setHash } = useHash();

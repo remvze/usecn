@@ -7,6 +7,6 @@
 
 #### Hooks:
 
-- [`useMousePosition`](/docs/use-mouse-position.md)
-- [`useToggle`](/docs/use-hash.md)
-- [`useHash`](/docs/use-hash.md)
+- [`useMousePosition`](/docs/use-mouse-position.md): Hook to get the position of the mouse.
+- [`useToggle`](/docs/use-hash.md): Hook to work with url hash.
+- [`useHash`](/docs/use-hash.md): Hook to toggle a boolean.

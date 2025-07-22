@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-counter",
+  "type": "registry:hook",
+  "title": "useCounter",
+  "description": "A hook to manage a counter with increment and decrement",
+  "files": [
+    {
+      "path": "registry/hooks/use-counter.ts",
+      "content": "import {\n  useCallback,\n  useEffect,\n  useMemo,\n  useState,\n  type Dispatch,\n  type SetStateAction,\n} from 'react';\n\ninterface Controllers {\n  decrement(decrementBy?: number): void;\n  increment(incrementBy?: number): void;\n  reset(): void;\n  set: Dispatch<SetStateAction<number>>;\n}\n\ninterface Options {\n  max?: number;\n  min?: number;\n}\n\nexport function useCounter(\n  startingValue: number = 0,\n  options: Options = {},\n): [number, Controllers] {\n  const [value, setValue] = useState<number>(startingValue);\n\n  useEffect(() => {\n    if (typeof options.max !== 'undefined' && startingValue > options.max) {\n      throw new Error('Starting value cannot be bigger than the max');\n    }\n\n    if (typeof options.min !== 'undefined' && startingValue < options.min) {\n      throw new Error('Starting value cannot be smaller than the min');\n    }\n  }, [options.max, options.min, startingValue]);\n\n  const increment = useCallback(\n    (incrementBy: number = 1) => {\n      setValue(prev => {\n        prev += incrementBy;\n\n        if (typeof options.max !== 'undefined' && options.max < prev) {\n          return options.max;\n        }\n\n        return prev;\n      });\n    },\n    [options.max],\n  );\n\n  const decrement = useCallback(\n    (decrementBy: number = 1) => {\n      setValue(prev => {\n        prev -= decrementBy;\n\n        if (typeof options.min !== 'undefined' && options.min > prev) {\n          return options.min;\n        }\n\n        return prev;\n      });\n    },\n    [options.min],\n  );\n\n  const reset = useCallback(() => {\n    setValue(startingValue);\n  }, [startingValue]);\n\n  const controllers = useMemo(\n    () => ({ decrement, increment, reset, set: setValue }),\n    [increment, decrement, reset, setValue],\n  );\n\n  return [value, controllers];\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

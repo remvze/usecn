@@ -157,6 +157,19 @@
           "type": "registry:hook"
         }
       ]
+    },
+
+    {
+      "name": "use-counter",
+      "type": "registry:hook",
+      "title": "useCounter",
+      "description": "A hook to manage a counter with increment and decrement",
+      "files": [
+        {
+          "path": "registry/hooks/use-counter.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }

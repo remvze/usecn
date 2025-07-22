@@ -1,9 +1,22 @@
-import { useCounter } from './hooks/use-counter';
+## useCounter
+
+A hook to manage a counter with increment and decrement.
+
+#### Install
+
+```bash
+npx shadcn@latest add https://usecn.mvze.net/r/use-counter.json
+```
+
+#### Usage
+
+```tsx
+import { useCounter } from '@/hooks/use-counter';
 
 function App() {
-  const [value, { decrement, increment, reset }] = useCounter(0, {
-    max: 10,
+  const [value, { increment, decrement, reset }] = useCounter(0, {
     min: -10,
+    max: 10,
   });
 
   return (
@@ -19,3 +32,4 @@ function App() {
 }
 
 export default App;
+```

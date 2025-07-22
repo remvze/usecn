@@ -19,3 +19,4 @@
 - [`useOnClickOutside`](/docs/use-on-click-outside.md): A hook to fire an event when clicked outside.
 - [`useScrollPosition`](/docs/use-scroll-position.md): A hook to get the scroll position.
 - [`useWindowSize`](/docs/use-window-size.md): A hook to get the window size.
+- [`useCounter`](/docs/use-counter.md): A hook to manage a counter with increment and decrement.

@@ -131,6 +131,32 @@
           "type": "registry:hook"
         }
       ]
+    },
+
+    {
+      "name": "use-media-query",
+      "type": "registry:hook",
+      "title": "useMediaQuery",
+      "description": "A hook to check if a media query matches",
+      "files": [
+        {
+          "path": "registry/hooks/use-media-query.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+
+    {
+      "name": "use-window-size",
+      "type": "registry:hook",
+      "title": "useWindowSize",
+      "description": "A hook to get the window size",
+      "files": [
+        {
+          "path": "registry/hooks/use-window-size.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }

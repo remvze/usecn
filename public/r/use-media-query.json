@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-media-query",
+  "type": "registry:hook",
+  "title": "useMediaQuery",
+  "description": "A hook to check if a media query matches",
+  "files": [
+    {
+      "path": "registry/hooks/use-media-query.ts",
+      "content": "'use client';\n\nimport { useState, useEffect } from 'react';\n\nexport function useMediaQuery(query: string) {\n  const [matches, setMatches] = useState(false);\n\n  useEffect(() => {\n    const media = window.matchMedia(query);\n    const listener = () => setMatches(media.matches);\n\n    listener();\n\n    media.addEventListener('change', listener);\n\n    return () => media.removeEventListener('change', listener);\n  }, [query]);\n\n  return matches;\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

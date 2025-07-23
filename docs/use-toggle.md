@@ -1,4 +1,4 @@
-## useMousePosition
+## useToggle
 
 A hook to toggle a between `true` and `false`.
 

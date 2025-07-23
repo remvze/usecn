@@ -170,6 +170,19 @@
           "type": "registry:hook"
         }
       ]
+    },
+
+    {
+      "name": "use-previous",
+      "type": "registry:hook",
+      "title": "usePrevious",
+      "description": "A hook to keep the previous value of a state",
+      "files": [
+        {
+          "path": "registry/hooks/use-previous.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }

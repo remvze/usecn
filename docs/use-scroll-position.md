@@ -1,4 +1,4 @@
-## yseScrollPosition
+## useScrollPosition
 
 A hook to get the scroll position.
 

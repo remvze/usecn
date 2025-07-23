@@ -1,4 +1,4 @@
-## useDebouncedValue
+## useDebouncedCallback
 
 A hook to debounce a callback.
 

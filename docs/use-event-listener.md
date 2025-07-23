@@ -1,4 +1,4 @@
-## useDebouncedValue
+## useEventListener
 
 A hook to set an event listener with cleanup.
 

@@ -1,5 +1,19 @@
+## usePrevious
+
+A hook to keep the previous value of a state.
+
+#### Install
+
+```bash
+npx shadcn@latest add https://usecn.mvze.net/r/use-previous.json
+```
+
+#### Usage
+
+```tsx
 import { useState } from 'react';
-import { usePrevious } from './hooks/use-previous';
+
+import { usePrevious } from '@/hooks/use-previous';
 
 function App() {
   const [value, setValue] = useState('');
@@ -20,3 +34,4 @@ function App() {
 }
 
 export default App;
+```

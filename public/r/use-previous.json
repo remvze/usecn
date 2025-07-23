@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-previous",
+  "type": "registry:hook",
+  "title": "usePrevious",
+  "description": "A hook to keep the previous value of a state",
+  "files": [
+    {
+      "path": "registry/hooks/use-previous.ts",
+      "content": "import { useEffect, useState } from 'react';\n\nexport function usePrevious<T>(value: T) {\n  const [current, setCurrent] = useState<T>(value);\n  const [previous, setPrevious] = useState<T | null>(null);\n\n  useEffect(() => {\n    if (value !== current) {\n      setPrevious(current);\n      setCurrent(value);\n    }\n  }, [value, current]);\n\n  return previous;\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

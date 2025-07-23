@@ -1,4 +1,4 @@
-## useDebouncedValue
+## useOnClickOutside
 
 A hook to fire an event when clicked outside.
 
